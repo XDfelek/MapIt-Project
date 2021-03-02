@@ -23,20 +23,29 @@ public class PostEntity {
 
     private String description;
 
+    @Column(name = "image_path")
     @NotEmpty
     private String imagePath;
 
+    @Column(name = "image_latitude")
     private Double imageLatitude;
 
+    @Column(name = "image_longitude")
     private Double imageLongitude;
 
+    @Column(name = "image_coordinates_are_real")  //TODO domyślnie jest false, trzeba zmienic pozniej
+    private boolean imageCoordinatesAreReal;
+
+    @Column(name = "votes_up")
     private Long votesUp;
 
+    @Column(name = "votes_down")
     private Long votesDown;
 
     @OneToMany
     private List<CommentEntity> comments;
 
+    @Column(name = "user_id")
     @ManyToOne
     private UserEntity userId;
 

@@ -26,16 +26,21 @@ public class CommentEntity {
     @NotEmpty
     private String content;
 
+    @Column(name = "post_id")
     @ManyToOne
     private PostEntity postId;
 
+    @Column(name = "user_id")
     @ManyToOne
     private UserEntity userId;
 
+    @Column(name = "image_path")
     private String imagePath;
 
+    @Column(name = "votes_up")
     private Long votesUp;
 
+    @Column(name = "votes_down")
     private Long votesDown;
 
     private LocalDate date;

@@ -31,7 +31,7 @@ public class UserEntity {
 
     private Long level;
 
-    @ManyToMany
+    @OneToMany
     private List<AuthoritiesEntity> role;
 
     @OneToMany
@@ -39,9 +39,7 @@ public class UserEntity {
 
     @OneToMany
     private List<CommentEntity> comments;
-
-    private boolean isBanned;
-
+    
+    @Column(name = "end_of_ban")
     private LocalDate endOfBan;
-
 }

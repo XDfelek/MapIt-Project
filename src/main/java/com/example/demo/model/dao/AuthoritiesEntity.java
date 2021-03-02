@@ -25,6 +25,7 @@ public class AuthoritiesEntity {
         USER_NOT_LOGGED,
     }
 
-    @ManyToMany
-    private List<UserEntity> users;
+    @Column(name = "user_id")
+    @ManyToOne
+    private UserEntity userId;
 }
