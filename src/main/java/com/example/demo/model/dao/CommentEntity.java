@@ -8,6 +8,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +22,7 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String content;
 
     @ManyToOne
@@ -28,4 +30,10 @@ public class CommentEntity {
 
     @ManyToOne
     private UserEntity userId;
+
+    private String imagePath;
+
+    private Long votesUp;
+
+    private Long votesDown;
 }

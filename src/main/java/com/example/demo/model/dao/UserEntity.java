@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Data
@@ -18,11 +19,16 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String username;
 
+    @NotEmpty
     private String password;
 
+    @NotEmpty
     private String email;
+
+    private Long level;
 
     @ManyToMany
     private List<AuthoritiesEntity> role;
