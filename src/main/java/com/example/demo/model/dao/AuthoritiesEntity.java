@@ -22,7 +22,7 @@ public class AuthoritiesEntity {
         ADMIN,
         MODERATOR,
         USER_LOGGED,
-        USER_NOT_LOGGED;
+        USER_NOT_LOGGED,
     }
 
     @ManyToMany

@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -38,5 +39,9 @@ public class UserEntity {
 
     @OneToMany
     private List<CommentEntity> comments;
+
+    private boolean isBanned;
+
+    private LocalDate endOfBan;
 
 }

@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,4 +37,6 @@ public class CommentEntity {
     private Long votesUp;
 
     private Long votesDown;
+
+    private LocalDate date;
 }
