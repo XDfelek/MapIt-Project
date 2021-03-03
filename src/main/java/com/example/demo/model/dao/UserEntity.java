@@ -11,7 +11,6 @@ import java.util.List;
 
 @Data
 @Entity
-@RequiredArgsConstructor
 @NoArgsConstructor
 @Table(name = "users")              //uniqueConstraints={@UniqueConstraint(columnNames={"username"})})
 public class UserEntity {
@@ -39,7 +38,7 @@ public class UserEntity {
 
     @OneToMany
     private List<CommentEntity> comments;
-    
+
     @Column(name = "end_of_ban")
     private LocalDate endOfBan;
 }

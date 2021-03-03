@@ -45,7 +45,6 @@ public class PostEntity {
     @OneToMany
     private List<CommentEntity> comments;
 
-    @Column(name = "user_id")
     @ManyToOne
     private UserEntity userId;
 
