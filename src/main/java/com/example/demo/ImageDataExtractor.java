@@ -36,11 +36,11 @@ public class ImageDataExtractor {
         if(gps != null) {
             setLatitude(gps[1]);
             setLongitude(gps[0]);
-            logger.info("latitude = " + latitude + " , longitude = " + longitude);
+            logger.info("latitude = " + latitude + " , longitude = " + longitude);              //TODO zmiana w boolean w PostEntity na true
             return gps;
         }else{
             double[] fakeGps = {0.0 ,0.0};
-            logger.info("latitude = " + fakeGps[0] + " , longitude = " + fakeGps[1]);
+            logger.info("latitude = " + fakeGps[0] + " , longitude = " + fakeGps[1]);           //TODO zmiana w boolean w PostEntity na false
             return fakeGps;
         }
 
