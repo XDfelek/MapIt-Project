@@ -23,8 +23,8 @@ public class PostService {
         postEntity.setTitle(request.getTitle());
         String imagePath = request.getImagePath();
         postEntity.setImagePath(imagePath);
-
         ImageDataExtractor imageDataExtractor = new ImageDataExtractor();
+        imageDataExtractor.getImageGPS(imagePath);
         postEntity.setDescription(request.getDescription());
         postEntity.setImageLatitude(imageDataExtractor.getLatitude());
         postEntity.setImageLongitude(imageDataExtractor.getLongitude());
