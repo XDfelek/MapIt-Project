@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.ImageDataExtractor;
 import com.example.demo.model.dao.PostEntity;
 import com.example.demo.model.dto.CreatePost;
 import com.example.demo.repository.PostRepo;
@@ -16,15 +17,31 @@ public class PostService {
 
     private final PostRepo postRepo;
 
-    public void createPost(CreatePost request) {
+        public void createPost(CreatePost request) {
         PostEntity postEntity = new PostEntity();
         postEntity.setDate(LocalDateTime.now());
         postEntity.setTitle(request.getTitle());
-        postEntity.setImagePath(request.getImagePath());
+        String imagePath = request.getImagePath();
+        postEntity.setImagePath(imagePath);
+
+        ImageDataExtractor imageDataExtractor = new ImageDataExtractor();
         postEntity.setDescription(request.getDescription());
-        postEntity.setImageLatitude(request.getImageLatitude());
-        postEntity.setImageLongitude(request.getImageLongitude());
+        postEntity.setImageLatitude(imageDataExtractor.getLatitude());
+        postEntity.setImageLongitude(imageDataExtractor.getLongitude());
 
         PostEntity savePost = postRepo.save(postEntity);
     }
+
+    //    public void createPost(CreatePost request) {
+//        PostEntity postEntity = new PostEntity();
+//        postEntity.setDate(LocalDateTime.now());
+//        postEntity.setTitle(request.getTitle());
+//        postEntity.setImagePath(request.getImagePath());
+//        postEntity.setDescription(request.getDescription());
+//        postEntity.setImageLatitude(request.getImageLatitude());
+//        postEntity.setImageLongitude(request.getImageLongitude());
+//
+//        PostEntity savePost = postRepo.save(postEntity);
+//    }
 }
+
