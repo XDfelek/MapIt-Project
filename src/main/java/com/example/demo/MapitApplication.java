@@ -12,7 +12,8 @@ public class MapitApplication {
     public static void main(String[] args) {
         SpringApplication.run(MapitApplication.class, args);
         ImageDataExtractor imageDataExtractor = new ImageDataExtractor();
-        imageDataExtractor.getImageGPS(imageDataExtractor.imagePathTest);
+        imageDataExtractor.getImageGPS(imageDataExtractor.imagePathTestWithGPS);
+        imageDataExtractor.getImageGPS(imageDataExtractor.imagePathTestWithoutGPS);
     }
 
 }
