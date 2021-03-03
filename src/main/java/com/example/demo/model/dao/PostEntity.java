@@ -4,6 +4,7 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -48,6 +49,6 @@ public class PostEntity {
     @ManyToOne
     private UserEntity userId;
 
-    private LocalDate date;
+    private LocalDateTime date;
 
 }

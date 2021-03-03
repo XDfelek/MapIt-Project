@@ -6,6 +6,10 @@ import com.example.demo.repository.PostRepo;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 @Service
 @RequiredArgsConstructor
 public class PostService {
@@ -14,6 +18,7 @@ public class PostService {
 
     public void createPost(CreatePost request) {
         PostEntity postEntity = new PostEntity();
+        postEntity.setDate(LocalDateTime.now());
         postEntity.setTitle(request.getTitle());
         postEntity.setImagePath(request.getImagePath());
         postEntity.setDescription(request.getDescription());
