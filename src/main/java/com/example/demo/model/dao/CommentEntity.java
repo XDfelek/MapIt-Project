@@ -26,11 +26,9 @@ public class CommentEntity {
     @NotEmpty
     private String content;
 
-    @Column(name = "post_id")
     @ManyToOne
     private PostEntity postId;
 
-    @Column(name = "user_id")
     @ManyToOne
     private UserEntity userId;
 

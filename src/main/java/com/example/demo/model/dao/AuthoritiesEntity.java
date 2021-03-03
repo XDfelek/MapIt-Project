@@ -9,7 +9,6 @@ import java.util.List;
 
 @Data
 @Entity
-@RequiredArgsConstructor
 @NoArgsConstructor
 @Table(name = "authorities")
 public class AuthoritiesEntity {
@@ -25,7 +24,6 @@ public class AuthoritiesEntity {
         USER_NOT_LOGGED,
     }
 
-    @Column(name = "user_id")
     @ManyToOne
     private UserEntity userId;
 }
