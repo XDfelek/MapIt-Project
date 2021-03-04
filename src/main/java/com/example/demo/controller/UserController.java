@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,14 +38,21 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    /*@GetMapping("/find/{username}")
+    public ResponseEntity<UserEntity> getUserByUsername(@PathVariable(value="username") String username) {
+        UserEntity user = userService.findUserByUsername(username);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }*/
+
     @PutMapping("/update")
     public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity user) {
-        UserEntity updateUser = userService.addUser(user);
+        UserEntity updateUser = userService.updateUser(user);
         return new ResponseEntity<>(updateUser, HttpStatus.OK);
     }
 
+    @Transactional
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<UserEntity> deleteUser(@PathVariable("id") Long id) {
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
