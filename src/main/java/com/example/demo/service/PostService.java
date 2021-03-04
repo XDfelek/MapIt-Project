@@ -30,6 +30,8 @@ public class PostService {
         postEntity.setImageLongitude(imageDataExtractor.getLongitude());
 
         PostEntity savePost = postRepo.save(postEntity);
+
+        //TODO if ImageLatitude == null or ImageLongitude == null , wezwać inną funkcję do wpisania danych ręcznie
     }
 
     //    public void createPost(CreatePost request) {

@@ -28,7 +28,7 @@ public class UserService {
 
     public UserEntity findUserById(Long id) {
         return userRepo.findUserById(id)
-                .orElseThrow(() -> new UserNotFoundException("User with id" + id + " was not found"));
+                .orElseThrow(() -> new UserNotFoundException("User with id " + id + " was not found"));
     }
 
     public void deleteUser(Long id) {
