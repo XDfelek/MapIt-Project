@@ -22,14 +22,19 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public UserEntity updateEmployee(UserEntity user) {
+    public UserEntity updateUser(UserEntity user) {
         return userRepo.save(user);
     }
 
     public UserEntity findUserById(Long id) {
         return userRepo.findUserById(id)
-                .orElseThrow(() -> new UserNotFoundException("User with id" + id + " was not found"));
+                .orElseThrow(() -> new UserNotFoundException("User with id " + id + " was not found"));
     }
+
+   /*public UserEntity findUserByUsername(String username) {
+        return userRepo.findUserByUsername(username)
+                .orElseThrow(() -> new UserNotFoundException("User with username " + username + " was not found"));
+    }*/
 
     public void deleteUser(Long id) {
         userRepo.deleteUserById(id);
