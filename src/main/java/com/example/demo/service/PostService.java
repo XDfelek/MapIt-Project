@@ -1,15 +1,18 @@
 package com.example.demo.service;
 
 import com.example.demo.ImageDataExtractor;
+import com.example.demo.model.dao.CommentEntity;
 import com.example.demo.model.dao.PostEntity;
 import com.example.demo.model.dto.CreatePost;
+import com.example.demo.model.dto.ShowAllPosts;
+import com.example.demo.model.dto.ShowPost;
 import com.example.demo.repository.PostRepo;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -17,7 +20,7 @@ public class PostService {
 
     private final PostRepo postRepo;
 
-        public void createPost(CreatePost request) {
+    public void createPost(CreatePost request) {
         PostEntity postEntity = new PostEntity();
         postEntity.setDate(LocalDateTime.now());
         postEntity.setTitle(request.getTitle());
@@ -29,21 +32,52 @@ public class PostService {
         postEntity.setImageLatitude(imageDataExtractor.getLatitude());
         postEntity.setImageLongitude(imageDataExtractor.getLongitude());
 
-        PostEntity savePost = postRepo.save(postEntity);
+        postRepo.save(postEntity);
 
         //TODO if ImageLatitude == null or ImageLongitude == null , wezwać inną funkcję do wpisania danych ręcznie
     }
 
-    //    public void createPost(CreatePost request) {
-//        PostEntity postEntity = new PostEntity();
-//        postEntity.setDate(LocalDateTime.now());
-//        postEntity.setTitle(request.getTitle());
-//        postEntity.setImagePath(request.getImagePath());
-//        postEntity.setDescription(request.getDescription());
-//        postEntity.setImageLatitude(request.getImageLatitude());
-//        postEntity.setImageLongitude(request.getImageLongitude());
-//
-//        PostEntity savePost = postRepo.save(postEntity);
-//    }
+    public ShowAllPosts getAllPosts() {
+        return ShowAllPosts.builder()
+                .posts(postRepo.findAll().stream()
+                        .map(postEntity -> ShowPost.builder()
+                                .id(postEntity.getId())
+                                .title(postEntity.getTitle())
+                                .description(postEntity.getDescription())
+                                .imagePath(postEntity.getImagePath())
+                                .build())
+                        .collect(Collectors.toList())).build();
+    }
+
+
+    public ShowPost showPost(Long id) {
+        Optional<PostEntity> postEntity = postRepo.findById(id);
+
+        if (postEntity.isPresent()) {
+            ShowPost post = new ShowPost();
+            post.setId(id);
+            post.setTitle(postEntity.get().getTitle());
+            post.setDescription((postEntity.get().getDescription()));
+            post.setImagePath(postEntity.get().getImagePath());
+            post.setLatitude(postEntity.get().getImageLatitude());
+            post.setLongitude(postEntity.get().getImageLongitude());
+            post.setCoordinates(postEntity.get().isImageCoordinatesAreReal());
+            post.setVote(postEntity.get().getVotes()
+                    .stream().map(vote -> vote.getVote().toString())
+                    .collect(Collectors.toList()));
+            List<String> list = new ArrayList<>();
+            for (CommentEntity comment : postEntity.get().getComments()) {
+                String content = comment.getContent();
+                list.add(content);
+            }
+            post.setComments(list);
+            // post.setUserID();
+            post.setDate(postEntity.get().getDate());
+
+            return post;
+        } else {
+            throw new NoSuchElementException("We don't have this post");
+        }
+    }
 }
 

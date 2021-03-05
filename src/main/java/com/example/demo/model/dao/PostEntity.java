@@ -37,11 +37,9 @@ public class PostEntity {
     @Column(name = "image_coordinates_are_real")  //TODO domyślnie jest false, trzeba zmienic pozniej
     private boolean imageCoordinatesAreReal;
 
-    @Column(name = "votes_up")
-    private Long votesUp;
-
-    @Column(name = "votes_down")
-    private Long votesDown;
+    @Column(name = "votes")
+    @OneToMany
+    private List<VoteEntity> votes;
 
     @OneToMany
     private List<CommentEntity> comments;
