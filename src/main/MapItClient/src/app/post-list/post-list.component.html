@@ -1,0 +1,23 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let post of posts">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.description }}</td>
+        <td>{{ post.imagePath }}</td>
+        <td><img src="post.imagePath"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
