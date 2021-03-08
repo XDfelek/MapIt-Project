@@ -28,7 +28,7 @@ public class UserEntity {
     @NotEmpty
     private String email;
 
-    private Long level;
+    private int level;
 
     @OneToMany
     private List<AuthoritiesEntity> role;

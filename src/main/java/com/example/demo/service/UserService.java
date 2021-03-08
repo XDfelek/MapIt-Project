@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.exception.UserNotFoundException;
+import com.example.demo.model.dao.AuthoritiesEntity;
 import com.example.demo.model.dao.UserEntity;
 import com.example.demo.repository.UserRepo;
 import lombok.AllArgsConstructor;
@@ -15,6 +16,7 @@ public class UserService {
     private final UserRepo userRepo;
 
     public UserEntity addUser(UserEntity addUser) {
+        addUser.setLevel(0);
         return userRepo.save(addUser);
     }
 

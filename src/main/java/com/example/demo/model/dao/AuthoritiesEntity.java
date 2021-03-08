@@ -20,8 +20,7 @@ public class AuthoritiesEntity {
     public enum ROLE{
         ADMIN,
         MODERATOR,
-        USER_LOGGED,
-        USER_NOT_LOGGED,
+        USER
     }
 
     @ManyToOne
