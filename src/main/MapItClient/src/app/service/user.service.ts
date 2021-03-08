@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 import {User} from "../model/user";
 
 @Injectable()
 export class UserService {
 
   private usersUrl: string;
-
   private allUserUrl: string;
 
   constructor(private http: HttpClient) {

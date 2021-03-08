@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Post} from "../model/post";
@@ -14,8 +14,8 @@ export class PostService {
     this.allpostURL = 'http://localhost:8080/posts';
   }
 
-  findAll(): Observable<Post[]> {
-  return this.http.get<Post[]>(this.allpostURL);
+  public findAll(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.allpostURL);
   }
 
   public save(post: Post) {
