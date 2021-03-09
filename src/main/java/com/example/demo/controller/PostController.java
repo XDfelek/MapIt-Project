@@ -1,11 +1,18 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.dao.PostEntity;
 import com.example.demo.model.dto.CreatePost;
 import com.example.demo.model.dto.ShowAllPosts;
 import com.example.demo.model.dto.ShowPost;
 import com.example.demo.service.PostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+import static org.springframework.http.ResponseEntity.status;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -20,7 +27,9 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public ShowAllPosts getAllPosts() { return postService.getAllPosts(); }
+    public ResponseEntity getAllPosts() {
+        return status(HttpStatus.OK).body(postService.getAllPosts());
+    }
 
     @GetMapping("/posts/{postID}")
     public ShowPost ShowPost(@PathVariable(name = "postID") Long postID ) {

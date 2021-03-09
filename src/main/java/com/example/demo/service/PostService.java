@@ -37,7 +37,7 @@ public class PostService {
         //TODO if ImageLatitude == null or ImageLongitude == null , wezwać inną funkcję do wpisania danych ręcznie
     }
 
-    public ShowAllPosts getAllPosts() {
+    /*public ShowAllPosts getAllPosts() {
         return ShowAllPosts.builder()
                 .posts(postRepo.findAll().stream()
                         .map(postEntity -> ShowPost.builder()
@@ -47,7 +47,13 @@ public class PostService {
                                 .imagePath(postEntity.getImagePath())
                                 .build())
                         .collect(Collectors.toList())).build();
+    }*/
+
+    public List<PostEntity> getAllPosts() {
+     return postRepo.findAll();
     }
+
+
 
 
     public ShowPost showPost(Long id) {

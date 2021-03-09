@@ -8,5 +8,6 @@ import java.util.List;
 @Builder
 @Getter
 public class ShowAllPosts {
-    private final List<ShowPost> posts;
+
+    private List<ShowPost> posts;
 }
