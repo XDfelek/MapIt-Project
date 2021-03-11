@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ShowPost {
+public class PostDTO {
 
     private Long id;
 

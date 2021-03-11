@@ -4,8 +4,7 @@ import com.example.demo.ImageDataExtractor;
 import com.example.demo.model.dao.CommentEntity;
 import com.example.demo.model.dao.PostEntity;
 import com.example.demo.model.dto.CreatePost;
-import com.example.demo.model.dto.ShowAllPosts;
-import com.example.demo.model.dto.ShowPost;
+import com.example.demo.model.dto.PostDTO;
 import com.example.demo.repository.PostRepo;
 import lombok.*;
 import org.springframework.stereotype.Service;
@@ -49,18 +48,25 @@ public class PostService {
                         .collect(Collectors.toList())).build();
     }*/
 
-    public List<PostEntity> getAllPosts() {
-     return postRepo.findAll();
+    public List<PostDTO> getAllPosts() {
+        return postRepo.findAll().stream()
+                .map(postDTO -> PostDTO.builder()
+                        .id(postDTO.getId())
+                        .title(postDTO.getTitle())
+                        .description(postDTO.getDescription())
+                        .imagePath(postDTO.getImagePath())
+                        .build())
+                .collect(Collectors.toList());
     }
 
 
 
 
-    public ShowPost showPost(Long id) {
+    public PostDTO showPost(Long id) {
         Optional<PostEntity> postEntity = postRepo.findById(id);
 
         if (postEntity.isPresent()) {
-            ShowPost post = new ShowPost();
+            PostDTO post = new PostDTO();
             post.setId(id);
             post.setTitle(postEntity.get().getTitle());
             post.setDescription((postEntity.get().getDescription()));
