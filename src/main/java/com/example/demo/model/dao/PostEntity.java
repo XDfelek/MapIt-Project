@@ -35,7 +35,7 @@ public class PostEntity {
     private Double imageLongitude;
 
     @Column(name = "image_coordinates_are_real")  //TODO domyślnie jest false, trzeba zmienic pozniej
-    private boolean imageCoordinatesAreReal;
+    private boolean imageCoordinatesAreReal = false;
 
     @Column(name = "votes")
     @OneToMany

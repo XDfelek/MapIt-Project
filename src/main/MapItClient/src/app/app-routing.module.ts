@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {UserFormComponent} from "./user-form/user-form.component";
-import {UserListComponent} from "./user-list/user-list.component";
-import {PostListComponent} from "./post-list/post-list.component";
-import {PostFormComponent} from "./post-form/post-form.component";
+import {UserFormComponent} from "./component/user-form/user-form.component";
+import {UserListComponent} from "./component/user-list/user-list.component";
+import {PostListComponent} from "./component/post-list/post-list.component";
+import {PostFormComponent} from "./component/post-form/post-form.component";
 
 const routes: Routes = [
   { path: 'users', component: UserListComponent },
