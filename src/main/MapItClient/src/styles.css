@@ -1,1 +1,376 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0 0 20px 0;
+    background-color: #0f1e3e;
+    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+    font-family: georgia, times new roman, serif;
+    font-size: 10px;
+    line-height:120%;
+    color:#727272;
+    letter-spacing:0.5px;
+    text-align: center;
+    }
+
+     #container {
+     margin-left: auto;
+     margin-right: auto;
+     width: 520px;
+     text-align: center;
+     }
+
+     a {
+        color:#b6caf5;
+        text-transform: lowercase;
+        text-decoration:none;
+        -webkit-transition: all 0.4s linear;
+        -moz-transition: all 0.4s linear;
+        transition: all 0.4s linear;
+        }
+
+        a:hover {
+        color:#ffff99;
+        text-shadow: 0px 0px 2px #ffffe6;
+        }
+
+        ::selection {
+        color:#fff;
+        background-color:#f3f0e9;
+        }
+        ::-moz-selection {
+        color:#fff;
+        background-color:#f3f0e9;
+        }
+
+        b {
+            font-family: Oxygen;
+            font-size: 11.5px;
+            color:#456abb;
+            text-decoration:none;
+            -webkit-transition: all 0.4s linear;
+            -moz-transition: all 0.4s linear;
+            transition: all 0.4s linear;
+            }
+
+            b:hover {
+            color:#b6caf5;
+            }
+
+            ::selection {
+            color:#fff;
+            background-color:#f3f0e9;
+            }
+            ::-moz-selection {
+            color:#fff;
+            background-color:#f3f0e9;
+            }
+
+        .q {
+            font-family:georgia;
+            font-size:40px;
+            padding-top:10px;
+            }
+
+            #top-link{
+            position:fixed;
+            bottom:30px;
+            right:80px;
+            margin:0px;
+            font-size:25px;
+            padding-top:10px;
+            text-align:center;
+            text-transform: lowercase;
+            width:40px;
+            height:30px;
+            background-color: #1e3b7b;
+            border-radius: 30px;
+            border: 2px solid #1e3b7b;
+            color:#b6caf5;
+            }
+            #top-link:hover{
+                position:fixed;
+                bottom:30px;
+                right:80px;
+                margin:0px auto;
+                font-size:25px;
+                padding-top:10px;
+                text-align:center;
+                width:40px;
+                height:30px;
+                background-color: #1e3b7b";
+                ;border-radius: 30px;
+                border: 2px solid #1e3b7b;
+                color:#f3f0e9;
+                box-shadow: 0px 0px 5px #ffffe6;
+            }
+
+            .button_like{
+                display: inline-block;
+                padding: 10px 10px;
+                margin: 0 1px 0px 1px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                width:40px;
+                height: 40px;
+                color: #2d59b9;
+                background-color: #2d59b9;
+                border: 2px #0f1e3e;
+                border-radius: 30px;
+                box-shadow: 0 5px #0f1e3e;
+            }
+            .button_like:active {
+                background-color: #2f8d5e;
+                box-shadow: 0 2px #666;
+                transform: translateY(3px);
+              }
+
+            .button_dislike{
+                    display: inline-block;
+                    padding: 10px 10px;
+                    margin: 0 1px 0px 1px;
+                    cursor: pointer;
+                    text-align: center;
+                    text-decoration: none;
+                    outline: none;
+                    width:40px;
+                    height: 40px;
+                    color: #2d59b9;
+                    background-color: #2d59b9;
+                    border: 2px #0f1e3e;
+                    border-radius: 30px;
+                    box-shadow: 0 5px #0f1e3e;
+            }
+            .button_dislike:active {
+                background-color: #bd384e;
+                box-shadow: 0 2px #666;
+                transform: translateY(3px);
+              }
+
+            .com_button{
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                margin: 10px 10px 0px 1px;
+                cursor: pointer;
+                font-family: Oxygen;
+                    color: #b6caf5;
+                    font-size:15px;
+                    letter-spacing:3px;
+                text-align: center;
+                width: 200px;
+                height: 40px;
+                background-color: #2d59b9;
+                border: 2px #0f1e3e;
+                border-radius: 30px;
+                box-shadow: 0 5px #0f1e3e;
+                }
+                .com_button:active {
+                    background-color: #0f1e3e;
+                    box-shadow: 0 2px #666;
+                    transform: translateY(3px);
+                  }
+
+            #nav{
+                position: static;
+                margin:0px;
+                font-size:0px;
+                width:10px;
+                height:250px;
+                background-color: #1e3b7b;
+                border-left: 2px solid #2d59b9;
+                border-right: 2px solid #2d59b9;
+                color:#1e3b7b;
+                }
+
+                #nav:hover {
+                    color: #ffffe6;
+                    background-color: #1e3b7b;
+                    border-left: 2px solid #2d59b9;
+                    border-right: 2px solid #2d59b9;
+                    display: inline-block;
+                    font-family: courier new;
+                    text-transform: lowercase;
+                    text-align: center;
+                    font-size: 15px;
+                    color: #f3f0e9;
+                    height: 250px;
+                    line-height: 20px;
+                    letter-spacing: 5px;
+                    overflow-y: auto;
+                    width: 145px;
+                }
+
+                #nav:active{
+                    color: #ffffe6;
+                    background-color: #1e3b7b;
+                    border-left: 2px solid #2d59b9;
+                    border-right: 2px solid #2d59b9;
+                    display: inline-block;
+                    font-family: courier new;
+                    text-transform: lowercase;
+                    text-align: center;
+                    font-size: 15px;
+                    color: #f3f0e9;
+                    height: 150px;
+                    line-height: 20px;
+                    letter-spacing: 5px;
+                    overflow-y: auto;
+                    width: 145px;
+                }
+    #cage1 {
+        width:100%;
+        margin:0px auto;
+        }
+    #cage {
+        width:630px;
+        margin:200px;
+        }
+
+        #headerblock {
+        margin:0px auto 0px auto;
+        }
+
+        #headerfixed {
+        position:fixed;
+        width:100%;
+        z-index:9999;
+        border-bottom: 2px solid #2d59b9;
+        margin:0px auto 0px auto;
+        background:#f3f0e9;
+        opacity:0.85;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        }
+
+        #headerfixed:hover {
+        opacity:1;
+        }
+
+        #header {
+        background:#1e3b7b;
+        background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+        padding:20px 0px;
+        text-align:center;
+        width:900px;
+        }
+
+        #header .navigations {
+        margin-top:0px;
+        }
+
+        #header .navigations a {
+        background:#0f1e3e;
+        color:#ffffff;
+        font-family:courier new;
+        text-transform:uppercase;
+        letter-spacing:2px;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        }
+
+        #header .navigations a:hover {
+        background:#2d59b9;
+        }
+
+        #header .titleouter {
+        margin:20px 0px 20px 0px;
+        }
+
+        #header span.title {
+            font:60px georgia;
+            color: #b6caf5;
+            text-align: center;
+            line-height: 80%;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: -1px 2px 2px #ffff99;
+        }
+
+        #header span.title:hover {
+        text-shadow: -1px 2px 5px #ffff99;
+        }
+
+        .post_title {
+            font-family: Oxygen;
+            font-size: 25px;
+            color: #b6caf5;
+            text-align: left;
+            text-transform: lowercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding-top: 45px;
+            padding-bottom: -10px;
+        }
+
+        .main_font {
+            font-family: Oxygen;
+            font-size: 10px;
+            color: #ffffc9;
+            text-align: center;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        #block{
+            position: static;
+            margin-top:10px;
+            font-size:0px;
+            width:270px;
+            height:400px;
+            background-color: #1e3b7b;
+            border-left: 2px solid #2d59b9;
+            border-right: 2px solid #2d59b9;
+            color:#1e3b7b;
+            opacity:0.85;
+            }
+
+            #block:hover {
+                opacity:1;
+            }
+
+        .foot1 {
+            width: 500px;
+            border-left: 5px solid#234794;
+            border-right: 5px solid #234794;
+        }
+
+        .foot2 {
+            width: 480px;
+            height: 100px;
+            text-align: center;
+            background-color: #1e3b7b;
+            background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+            border-left: 2px solid #2d59b9;
+            border-right: 2px solid #2d59b9;
+            margin-left: 8px;
+            position: relative;
+        }
+
+        #map {
+            height: 300px;
+            width: 500px;
+        }
+
+        .post_img{
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+           -ms-transition: all 1s ease;
+           transition: all 0.5s ease;
+        }
+
+.post_img:hover {
+    filter: brightness(0.4);
+}
+
+.picture_text {
+    font-size: 30px;
+    color: transparent;
+}
+.picture_text:hover {
+font-size: 20px;
+color: #ffff;
+}
