@@ -11,7 +11,6 @@ import {UserService} from "./service/user.service";
 import {PostListComponent} from "./component/post-list/post-list.component";
 import {PostFormComponent} from "./component/post-form/post-form.component";
 import {PostService} from "./service/post.service";
-import { UploadFilesComponent } from './component/upload-files/upload-files.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { UploadFilesComponent } from './component/upload-files/upload-files.comp
     UserListComponent,
     UserFormComponent,
     PostListComponent,
-    PostFormComponent,
-    UploadFilesComponent
+    PostFormComponent
   ],
   imports: [
     BrowserModule,

@@ -41,8 +41,7 @@ public class PostEntity {
     private boolean imageCoordinatesAreReal = false;
 
     @Column(name = "votes")
-    @OneToMany
-    private List<VoteEntity> votes;
+    private int votes;
 
     @OneToMany
     private List<CommentEntity> comments;

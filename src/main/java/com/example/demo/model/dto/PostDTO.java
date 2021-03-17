@@ -25,7 +25,7 @@ public class PostDTO {
 
     private boolean coordinates;
 
-    private List<String> vote;
+    private int vote;
 
     private List<String> comments;
 

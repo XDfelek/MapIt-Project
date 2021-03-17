@@ -21,3 +21,14 @@
     </table>
   </div>
 </div>
+
+
+<div class="card">
+  <div class="card-header">List of files</div>
+  <ul class="list-group list-group-flush" *ngFor="let file of fileInfos | async" >
+    <li class="list-group-item">
+      <a href="{{file.url}}">{{file.name}}, {{file.url}}</a>
+      <img src="{{file.url}}" width=100% height=100%>
+    </li>
+  </ul>
+</div>

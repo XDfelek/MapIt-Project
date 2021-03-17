@@ -74,9 +74,7 @@ public class PostService {
             post.setLatitude(postEntity.get().getImageLatitude());
             post.setLongitude(postEntity.get().getImageLongitude());
             post.setCoordinates(postEntity.get().isImageCoordinatesAreReal());
-            post.setVote(postEntity.get().getVotes()
-                    .stream().map(vote -> vote.getVote().toString())
-                    .collect(Collectors.toList()));
+            post.setVote(postEntity.get().getVotes());
             List<String> list = new ArrayList<>();
             for (CommentEntity comment : postEntity.get().getComments()) {
                 String content = comment.getContent();

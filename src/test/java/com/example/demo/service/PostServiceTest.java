@@ -70,7 +70,7 @@ public class PostServiceTest {
         postEntity.setImageLatitude(Double.valueOf("52.231936545664844"));
         postEntity.setImageLongitude(Double.valueOf("21.006477796033575"));
         postEntity.setImageCoordinatesAreReal(true);
-        postEntity.setVotes(Collections.emptyList());
+        postEntity.setVotes(3);
         postEntity.setComments(Collections.emptyList());
 
         return postEntity;
