@@ -20,6 +20,9 @@ public class FileEntity {
     @Lob
     private byte[] data;
 
+    @OneToOne
+    private PostEntity postId;
+
     public FileEntity() {
     }
 

@@ -23,7 +23,7 @@
   <div class="card-header">List of files</div>
   <ul class="list-group list-group-flush" *ngFor="let file of fileInfos | async" >
     <li class="list-group-item">
-      <a href="{{file.url}}">{{file.name}}</a>
+      <a href="{{file.url}}">{{file.name}}, {{file.url}}</a>
       <img src="{{file.url}}" width=500px height=500px>
     </li>
   </ul>

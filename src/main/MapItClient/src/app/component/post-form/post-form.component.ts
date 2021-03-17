@@ -10,7 +10,7 @@ import {Post} from "../../model/post";
 })
 export class PostFormComponent {
 
-  post: Post = new Post();
+  post: Post;
 
   constructor(
     private route: ActivatedRoute,

@@ -31,6 +31,10 @@
                required #imagePath="ngModel">
         <div [hidden]="!imagePath.pristine" class="alert alert-danger">Image path is required</div>
       </div>
+      <div class="form-group">
+        <app-upload-files></app-upload-files>
+        <div [hidden]="!imagePath.pristine" class="alert alert-danger">Image is required</div>
+      </div>
       <button type="submit" [disabled]="!postForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>

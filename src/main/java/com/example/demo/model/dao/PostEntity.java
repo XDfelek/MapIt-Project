@@ -28,6 +28,9 @@ public class PostEntity {
     @NotEmpty
     private String imagePath;
 
+    @OneToOne
+    private FileEntity fileId;
+
     @Column(name = "image_latitude")
     private Double imageLatitude;
 

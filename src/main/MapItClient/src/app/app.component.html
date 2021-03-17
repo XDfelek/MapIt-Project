@@ -1,35 +1,79 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/users" class="btn btn-info">List Users</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/posts" class="btn btn-info">List Posts</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/addpost" class="btn btn-info">Add Posts</a>
-            </li>
-          </ul>
+<div id="cage1">
+  <div id="headerblock">
+    <div id="headerfixed">
+      <div id="header" style="width: 100%;">
+        <div class="titleouter">
+          <a href="index.html">
+            <span class="title">MapIT</span>
+          </a>
+        </div>
+        <div class="navigations">
+          <a routerLink="/posts" class="btn btn-info" style="padding: 5px 20px 5px 20px;">home</a>&nbsp;
+          <a routerLink="/posts" class="btn btn-info" style="padding: 5px 20px 5px 20px;">trending</a>&nbsp;
+          <a routerLink="/users" class="btn btn-info" style="padding: 5px 20px 5px 20px;">list users</a>&nbsp;
+          <a routerLink="/adduser" class="btn btn-info" style="padding: 5px 20px 5px 20px;">add user</a>&nbsp;
         </div>
       </div>
-      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<div class="container" style="width: 600px">
-  <div style="margin: 20px">
-    <h3>{{title}}</h3>
-  </div>
-
-  <app-upload-files></app-upload-files>
+<br>
+<br>
+<div id="nav" style="position: fixed; top: 160px; left: 0px;">
+  <br>
+  <br>
+  <a routerLink="/addpost" class="btn btn-info">Add Post</a>
+  <br>
 </div>
+
+<br>
+<div id="cage">
+  <div class="bodyline">
+    <div class="body">
+      <div class="tableline">
+        <div id="content" class="masonry" style="position: relative; height: 5000px;">
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <router-outlet></router-outlet>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" style="width: 600px">
+            <div style="margin: 20px">
+              <h3>{{title}}</h3>
+            </div>
+
+            <a onclick="jQuery('html, body').animate( { scrollTop: 0 }, 'slow' );" href="javascript:void(0);">
+              <div id="top-link">&uarr;</div>
+            </a>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="foot1">
+              <div class="foot2">
+                <div
+                  style="color: #b6caf5; font-family: Oxygen; font-size: 9px;text-align: center; letter-spacing: 1px; padding: 20px 10px; margin-top: 10px; line-height: normal;">
+                  <img
+                    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f8232eb1-c648-4c6e-aabf-1829bb5e6230/d54kk09-50d346d2-20dc-4eea-ae48-eaf222285dd7.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZjgyMzJlYjEtYzY0OC00YzZlLWFhYmYtMTgyOWJiNWU2MjMwXC9kNTRrazA5LTUwZDM0NmQyLTIwZGMtNGVlYS1hZTQ4LWVhZjIyMjI4NWRkNy5naWYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.1BtGRyxibWUhH155tuOieFQs638_0-S8Oc3f8RWRuXE"
+                    alt="credit" style="float: left;">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                  dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                  laborum.
+                </div>
+              </div>
+            </div>
+            <div style="color: #2d59b9;font-size: 9px;font-family: AMGDT;letter-spacing: 1px; padding: 10px 10px 10px;">
+              &copy; Copyright 2021 by Lucky7. All Rights Reserved.
+            </div>
+
+          </div>
