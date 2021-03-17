@@ -9,6 +9,7 @@ import com.example.demo.repository.PostRepo;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -19,15 +20,17 @@ public class PostService {
 
     private final PostRepo postRepo;
 
-    public void createPost(CreatePost request) {
+    private final FileStorageServiceImpl fileStorageService;
+
+    public void createPost(String fileName, String title, String description) throws IOException {
         PostEntity postEntity = new PostEntity();
         postEntity.setDate(LocalDateTime.now());
-        postEntity.setTitle(request.getTitle());
-        String imagePath = request.getImagePath();
+        postEntity.setTitle(title);
+        String imagePath = fileStorageService.load(fileName).getFile().getPath();
         postEntity.setImagePath(imagePath);
         ImageDataExtractor imageDataExtractor = new ImageDataExtractor();
         imageDataExtractor.getImageGPS(imagePath);
-        postEntity.setDescription(request.getDescription());
+        postEntity.setDescription(description);
         postEntity.setImageLatitude(imageDataExtractor.getLatitude());
         postEntity.setImageLongitude(imageDataExtractor.getLongitude());
 

@@ -1,6 +1,7 @@
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" [(ngModel)]="post.title"
@@ -11,6 +12,7 @@
                required #title="ngModel">
       </div>
       <div [hidden]="!title.pristine" class="alert alert-danger">Title is required</div>
+
       <div class="form-group">
         <label for="description">Description</label>
         <input type="text" [(ngModel)]="post.description"
@@ -23,18 +25,17 @@
       </div>
 
 
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label for="imagePath">imagePath</label>
         <input type="text" [(ngModel)]="post.imagePath"
+               [value]="currentFile.name"
                class="form-control"
                id="imagePath"
                name="imagePath"
-               placeholder="Enter your imagePath"
-               required #imagePath="ngModel">
-        <div [hidden]="!imagePath.pristine" class="alert alert-danger">Image path is required</div>
+               placeholder="Enter your imagePath">
       </div>
 
-      -->
+
       <div class="form-group">
 
 
@@ -62,12 +63,9 @@
 
 
 
-
-
-
         <div [hidden]="selectedFiles" class="alert alert-danger">Image is required</div>
       </div>
-      <button type="submit" [disabled]="!postForm.form.valid && selectedFiles" (click)="upload()"
+      <button type="submit" [disabled]="!postForm.form.valid && selectedFiles" (click)="upload(post)"
               class="btn btn-info">Submit</button>
     </form>
   </div>

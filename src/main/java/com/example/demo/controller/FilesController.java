@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.message.ResponseMessage;
+import com.example.demo.model.dto.CreatePost;
 import com.example.demo.model.info.FileInfo;
 import com.example.demo.service.FileStorageService;
 
+import com.example.demo.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -23,12 +25,16 @@ public class FilesController {
 
     @Autowired
     FileStorageService storageService;
+    @Autowired
+    PostService postService;
 
     @PostMapping("/upload")
-    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file")MultipartFile file)  {
+    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file")MultipartFile file, @RequestParam("title")String postTitle, @RequestParam("description")String postDescription) {
         String message = "";
         try {
             storageService.save(file);
+            postService.createPost(file.getOriginalFilename(), postTitle, postDescription);
+
 
             message = "Zdjęcie zostało zapisane pomyślnie! " + file.getOriginalFilename();
             return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));

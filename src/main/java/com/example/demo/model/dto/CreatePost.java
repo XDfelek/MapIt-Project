@@ -23,4 +23,7 @@ public class CreatePost {
 
     private Double imageLongitude;
 
+    public CreatePost(String name, String postTitle, String postDescription) {
+
+    }
 }

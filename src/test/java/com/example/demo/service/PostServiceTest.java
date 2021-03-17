@@ -32,11 +32,11 @@ public class PostServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
-    void shouldCreatePost() {
-        postService.createPost(createPost());
-
-    }
+//    @Test
+//    void shouldCreatePost() {
+//        postService.createPost(createPost());
+//
+//    }
 
     @Test
     void shouldGetAllPost() {

@@ -37,11 +37,11 @@ export class PostFormComponent{
     this.post.imagePath = event.target.files.url;
   }
 
-  upload() {
+  upload(post: Post) {
     this.progress = 0;
 
     this.currentFile = this.selectedFiles.item(0);
-    this.uploadService.upload(this.currentFile).subscribe(
+    this.uploadService.upload(this.currentFile, post).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {
           this.progress = Math.round(100 * event.loaded / event.total);

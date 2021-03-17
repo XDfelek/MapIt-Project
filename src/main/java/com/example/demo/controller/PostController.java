@@ -17,7 +17,7 @@ public class PostController {
 
     @PostMapping("/addpost")
     public void createPost(@RequestBody CreatePost request){
-        postService.createPost(request);
+        //postService.createPost(request);
     }
 
     @GetMapping("/posts")
