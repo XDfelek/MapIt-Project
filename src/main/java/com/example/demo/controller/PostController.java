@@ -15,11 +15,6 @@ public class PostController {
 
     private final PostService postService;
 
-    @PostMapping("/addpost")
-    public void createPost(@RequestBody CreatePost request){
-        //postService.createPost(request);
-    }
-
     @GetMapping("/posts")
     public List<PostDTO> getAllPosts() {
         return postService.getAllPosts();

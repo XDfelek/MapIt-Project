@@ -19,9 +19,9 @@ public class PostDTO {
 
     private String imagePath;
 
-    private Double latitude;
+    private Double imageLatitude;
 
-    private Double longitude;
+    private Double imageLongitude;
 
     private boolean coordinates;
 

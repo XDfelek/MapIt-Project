@@ -3,4 +3,6 @@ export class Post {
   title: string;
   description: string;
   imagePath: string;
+  imageLongitude: number;
+  imageLatitude: number;
 }

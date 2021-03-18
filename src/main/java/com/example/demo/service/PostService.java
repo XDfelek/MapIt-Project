@@ -58,6 +58,8 @@ public class PostService {
                         .title(postDTO.getTitle())
                         .description(postDTO.getDescription())
                         .imagePath(postDTO.getImagePath())
+                        .imageLatitude(postDTO.getImageLatitude())
+                        .imageLongitude(postDTO.getImageLongitude())
                         .build())
                 .collect(Collectors.toList());
     }
@@ -74,8 +76,8 @@ public class PostService {
             post.setTitle(postEntity.get().getTitle());
             post.setDescription((postEntity.get().getDescription()));
             post.setImagePath(postEntity.get().getImagePath());
-            post.setLatitude(postEntity.get().getImageLatitude());
-            post.setLongitude(postEntity.get().getImageLongitude());
+            post.setImageLatitude(postEntity.get().getImageLatitude());
+            post.setImageLongitude(postEntity.get().getImageLongitude());
             post.setCoordinates(postEntity.get().isImageCoordinatesAreReal());
             post.setVote(postEntity.get().getVotes());
             List<String> list = new ArrayList<>();

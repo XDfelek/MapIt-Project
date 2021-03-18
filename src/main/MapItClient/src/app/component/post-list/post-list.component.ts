@@ -23,4 +23,5 @@ export class PostListComponent implements OnInit {
     this.fileInfos = this.uploadService.getFiles();
   }
 
+
 }

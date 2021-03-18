@@ -7,6 +7,9 @@
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Image</th>
+        <th scope="col">Image latitude</th>
+        <th scope="col">Image longitude</th>
+        <th scope="col">MAP</th>
       </tr>
       </thead>
       <tbody>
@@ -15,7 +18,28 @@
         <td>{{ post.title }}</td>
         <td>{{ post.description }}</td>
         <td>{{ post.imagePath }}</td>
-        <!--<td><img src="post.imagePath"></td>-->
+        <td>{{ post.imageLatitude }}</td>
+        <td id="longi">{{ post.imageLongitude }}</td>
+        <!-- <td><img src="{{post.imagePath}}"/></td> -->
+        <td>
+          <div id="mapgoogle"></div>
+          a: any = {{post.imageLongitude}}
+          b = {{post.imageLatitude}}
+          <script>
+            function initMap(latitude, longitude) {
+              latitude = 0.0;
+              longitude = 0.0;
+
+              var location = {lat: latitude, lng: longitude};
+              var map = new google.maps.Map(document.getElementById("map"), {
+                center: location,
+                zoom: 10
+              });
+            }
+          </script>
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxHomg-43Z8GmbobMsRtdFx0wEYG-KxTw&callback=initMap">
+          </script>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -31,4 +55,16 @@
       <img src="{{file.url}}" width=100% height=100%>
     </li>
   </ul>
+<ul *ngFor="let post of posts">
+  <li><img src="{{post.imagePath}}" width=100% height=100%></li>
+</ul>
 </div>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxHomg-43Z8GmbobMsRtdFx0wEYG-KxTw&callback=initMap">
+</script>
+
+
+<form method="post" *ngFor="let post of posts">
+  <input type="hidden" name="latit" value="{{post.imageLatitude}}" id="latit">
+  </form>
